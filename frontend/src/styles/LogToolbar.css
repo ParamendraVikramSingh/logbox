@@ -1,0 +1,251 @@
+/* ══════════════════════════════════════
+   Toolbar — Vercel-exact
+══════════════════════════════════════ */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: var(--toolbar-h);
+  padding: 0 12px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+/* Left icons */
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.toolbar-icon-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+.toolbar-icon-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--border-focus);
+}
+.toolbar-icon-btn.spin .toolbar-refresh-svg {
+  animation: toolbar-spin 0.7s linear infinite;
+}
+@keyframes toolbar-spin { to { transform: rotate(360deg); } }
+
+/* Search wrap — positions panel relative to search bar */
+.toolbar-search-wrap {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Search bar — fills available space */
+.toolbar-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-base);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0 10px;
+  height: 32px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.toolbar-search.focused {
+  border-color: var(--border-focus);
+}
+.toolbar-search-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.toolbar-search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-family: inherit;
+}
+.toolbar-search-input::placeholder {
+  color: var(--text-muted);
+}
+.toolbar-search-clear {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 2px;
+}
+.toolbar-search-clear:hover {
+  color: var(--text-primary);
+}
+
+/* Right — actions */
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+/* Live toggle */
+.toolbar-live {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: inherit;
+}
+.toolbar-live:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-focus);
+  color: var(--text-primary);
+}
+.toolbar-live.on {
+  color: var(--text-primary);
+  border-color: var(--border-focus);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .toolbar-live span { display: none; }
+}
+
+/* ── Search Panel ── */
+.search-panel {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-focus);
+  border-radius: var(--radius-sm);
+  z-index: 300;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  max-height: 400px;
+  overflow-y: auto;
+}
+.search-panel-section {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.search-panel-section:last-child {
+  border-bottom: none;
+}
+.search-panel-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+/* Filter chip grid — allows more chips to wrap nicely */
+.search-panel-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Base chip */
+.search-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid var(--border-focus);
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* Label part — monospace key name */
+.chip-label {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* Hint part — human-readable description */
+.chip-hint {
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.6;
+}
+
+.search-chip.recent {
+  background: var(--bg-active);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+.search-chip.recent:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-focus);
+}
+.search-chip.filter {
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+}
+.search-chip.filter:hover {
+  background: var(--bg-active);
+  color: var(--text-primary);
+  border-color: var(--border-focus);
+}
+.search-chip.filter:hover .chip-hint {
+  opacity: 0.8;
+}
+
+/* Suggestion chips (context-aware values) — vertical list */
+.search-panel-chips.vertical {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 2px;
+}
+.search-chip.suggestion {
+  background: none;
+  color: var(--text-primary);
+  border-color: transparent;
+  border-radius: var(--radius-sm);
+  text-align: left;
+  padding: 6px 10px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+.search-chip.suggestion:hover {
+  background: var(--bg-hover);
+  border-color: transparent;
+}
+

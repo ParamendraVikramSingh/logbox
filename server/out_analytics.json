@@ -1,0 +1,73 @@
+{
+  "totalRequests": 38,
+  "totalErrors": 0,
+  "overallErrorPercentage": 0,
+  "routeKeys": [
+    "admin",
+    "/api/health",
+    "db",
+    "server"
+  ],
+  "routeStats": [
+    {
+      "route": "admin",
+      "total": 27,
+      "errorCount": 0,
+      "errorPercentage": 0,
+      "sparkline": [
+        {
+          "label": "6 Apr, 02 am",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "route": "/api/health",
+      "total": 9,
+      "errorCount": 0,
+      "errorPercentage": 0,
+      "sparkline": [
+        {
+          "label": "6 Apr, 02 am",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "route": "db",
+      "total": 1,
+      "errorCount": 0,
+      "errorPercentage": 0,
+      "sparkline": [
+        {
+          "label": "6 Apr, 02 am",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "route": "server",
+      "total": 1,
+      "errorCount": 0,
+      "errorPercentage": 0,
+      "sparkline": [
+        {
+          "label": "6 Apr, 02 am",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "requestRateSeries": [
+    {
+      "label": "6 Apr, 02 am",
+      "admin": 27,
+      "/api/health": 9,
+      "db": 1,
+      "server": 1
+    }
+  ],
+  "latencySeries": [],
+  "topLatencies": [],
+  "rangeLabel": "1/4/2026, 5:30:00 am - 16/4/2026, 1:25:13 am"
+}

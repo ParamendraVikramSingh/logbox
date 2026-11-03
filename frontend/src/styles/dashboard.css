@@ -1,0 +1,91 @@
+.vdash {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg-base);
+}
+
+.vdash-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.vdash-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.section-scroll-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  padding: 16px 18px 18px;
+  background:
+    radial-gradient(circle at top left, var(--page-tint-a), transparent 26%),
+    radial-gradient(circle at top right, var(--page-tint-b), transparent 24%),
+    var(--bg-base);
+}
+
+.analytics-page {
+  gap: 14px;
+}
+
+.page-sidebar-open-btn {
+  align-self: flex-start;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--border) 72%);
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg-surface) 90%);
+  color: var(--text-primary);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition), border-color var(--transition);
+}
+
+.page-sidebar-open-btn:hover {
+  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--accent) 15%, var(--bg-surface) 85%);
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--border) 58%);
+}
+
+.section-footer-actions {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 4px;
+}
+
+.analytics-refresh-btn {
+  padding: 11px 16px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--border) 72%);
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg-surface) 90%);
+  color: var(--text-primary);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition), border-color var(--transition);
+}
+
+.analytics-refresh-btn:hover {
+  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--accent) 15%, var(--bg-surface) 85%);
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--border) 58%);
+}
+
+@media (max-width: 860px) {
+  .section-scroll-page {
+    padding: 12px 14px 14px;
+  }
+}

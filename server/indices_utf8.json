@@ -1,0 +1,54 @@
+[
+  {
+    "health": "yellow",
+    "status": "open",
+    "index": "logstash-2026.04.05",
+    "uuid": "H4v8slEDTvOAJPWF38Bonw",
+    "pri": "1",
+    "rep": "1",
+    "docs.count": "205",
+    "docs.deleted": "0",
+    "store.size": "207.3kb",
+    "pri.store.size": "207.3kb",
+    "dataset.size": "207.3kb"
+  },
+  {
+    "health": "yellow",
+    "status": "open",
+    "index": "logs",
+    "uuid": "LFebakzXQ2W8Hh0Y8PoZMA",
+    "pri": "1",
+    "rep": "1",
+    "docs.count": "0",
+    "docs.deleted": "0",
+    "store.size": "249b",
+    "pri.store.size": "249b",
+    "dataset.size": "249b"
+  },
+  {
+    "health": "yellow",
+    "status": "open",
+    "index": ".ds-filebeat-8.12.0-2026.04.05-000001",
+    "uuid": "G5mta-VeQIiLSLPobOr2Ug",
+    "pri": "1",
+    "rep": "1",
+    "docs.count": "2",
+    "docs.deleted": "0",
+    "store.size": "15kb",
+    "pri.store.size": "15kb",
+    "dataset.size": "15kb"
+  },
+  {
+    "health": "yellow",
+    "status": "open",
+    "index": "demo-logs-2026.04.05",
+    "uuid": "Bt9WIHlkQHab9dJF9NjDug",
+    "pri": "1",
+    "rep": "1",
+    "docs.count": "38",
+    "docs.deleted": "0",
+    "store.size": "144.6kb",
+    "pri.store.size": "144.6kb",
+    "dataset.size": "144.6kb"
+  }
+]

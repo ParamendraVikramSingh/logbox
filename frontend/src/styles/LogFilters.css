@@ -1,0 +1,59 @@
+/* ── Log level filter buttons ── */
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.filter-btn:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border-color: #3a3f52;
+}
+
+/* Active states with level-specific accent */
+.filter-btn.active {
+  border-color: transparent;
+  color: #fff;
+  font-weight: 600;
+}
+
+.filter-btn.active[data-type="ALL"] {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  box-shadow: 0 2px 10px rgba(99, 102, 241, 0.35);
+}
+
+.filter-btn.active[data-type="INFO"] {
+  background: var(--accent-blue);
+  box-shadow: 0 2px 10px rgba(77, 171, 247, 0.35);
+}
+
+.filter-btn.active[data-type="WARN"] {
+  background: var(--accent-yellow);
+  color: #1a1000;
+  box-shadow: 0 2px 10px rgba(245, 159, 0, 0.35);
+}
+
+.filter-btn.active[data-type="ERROR"] {
+  background: var(--accent-red);
+  box-shadow: 0 2px 10px rgba(250, 82, 82, 0.35);
+}
+
+.filter-btn.active[data-type="DEBUG"] {
+  background: var(--accent-debug);
+  box-shadow: 0 2px 10px rgba(165, 100, 255, 0.35);
+}

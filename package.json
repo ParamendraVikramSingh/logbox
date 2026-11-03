@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "nodemon": "^3.1.14",
+    "openai": "^6.33.0"
+  }
+}

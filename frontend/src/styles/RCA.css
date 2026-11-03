@@ -1,0 +1,145 @@
+@import "./IncidentCard.css";
+@import "./RCAModal.css";
+
+.rca-page-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, var(--page-tint-b), transparent 28%),
+    radial-gradient(circle at top right, var(--page-tint-a), transparent 24%),
+    var(--bg-base);
+}
+
+.rca-page {
+  height: calc(100vh - var(--topbar-h));
+  overflow-y: auto;
+  padding: 16px 18px 18px;
+}
+
+/* ✅ FIXED: removed max-width + center alignment */
+.rca-hero,
+.rca-results {
+  max-width: 1440px;
+  margin: 0 auto 16px;
+}
+
+.rca-hero {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, var(--hero-tint-a), transparent 38%),
+    linear-gradient(225deg, var(--hero-tint-b), transparent 30%),
+    var(--hero-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.rca-hero-eyebrow,
+.rca-results-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.rca-hero h1,
+.rca-results h2 {
+  font-size: clamp(26px, 4vw, 40px);
+  line-height: 1.08;
+}
+
+.rca-hero p,
+.rca-results-head p {
+  max-width: 720px;
+  margin-top: 12px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.rca-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.rca-duration-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rca-duration-field span {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.rca-duration-field select,
+.rca-refresh-btn,
+.rca-secondary-btn {
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  padding: 0 14px;
+}
+
+.rca-refresh-btn,
+.rca-secondary-btn {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.rca-secondary-btn:hover,
+.rca-refresh-btn:hover {
+  border-color: var(--border-focus);
+  background: var(--bg-hover);
+}
+
+.rca-results-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+
+.rca-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+  width: 100%; /* ✅ ensure grid stretches */
+}
+
+.rca-empty-state,
+.rca-inline-error {
+  margin-bottom: 16px;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+}
+
+.rca-inline-error {
+  color: var(--metric-negative);
+}
+
+@media (max-width: 900px) {
+  .rca-page,
+  .section-scroll-page {
+    padding: 12px 14px 14px;
+  }
+
+  .rca-hero,
+  .rca-results-head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
